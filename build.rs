@@ -57,8 +57,8 @@ impl Feature {
         match self {
             Feature::NUCLEO_F401RE => {
                 let map = MemoryMap {
-                    flash: (0x02000000, "64K".to_string()),
-                    ram: (0x02000000, "256K".to_string()),
+                    flash: (0x08000000, "64K".to_string()),
+                    ram: (0x20000000, "256K".to_string()),
                 };
                 (Form::Nucleo64, Family::Stm32F4xx, map)
             }
