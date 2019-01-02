@@ -1,0 +1,20 @@
+language: rust
+rust:
+  - stable
+  - nightly
+cache: cargo
+env:
+- BOARD=nucleo-f401re
+- BOARD=nucleo-f411re
+- BOARD=nucleo-f412rg
+matrix:
+  allow_failures:
+    - rust: nightly
+  fast_finish: true
+script:
+  - rustup target add thumbv7em-none-eabihf
+  - cargo build --features=$BOARD --verbose
+  - cargo build --features=$BOARD --release --verbose
+  - cargo build --features=$BOARD --examples --verbose
+  - cargo build --features=$BOARD --examples --release --verbose
+  - cargo doc --features=$BOARD --verbose
