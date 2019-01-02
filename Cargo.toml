@@ -1,0 +1,40 @@
+[package]
+authors = ["Matt Vertescher <mvertescher@gmail.com>"]
+description = "Board Support Crate for the STM32 Nucleo family of boards"
+edition = "2018"
+keywords = ["arm", "cortex-m", "stm32"]
+license = "MIT OR Apache-2.0"
+name = "stm32-nucleo"
+version = "0.1.0"
+
+[dependencies]
+stm32f4xx-hal = "0.2.8"
+
+[dev-dependencies]
+cortex-m = "0.5.8"
+cortex-m-rt = "0.6.7"
+cortex-m-semihosting = "0.3.2"
+panic-semihosting = "0.5.1"
+
+[build-dependencies]
+strum = "0.13.0"
+strum_macros = "0.13.0"
+
+[features]
+rt = ["stm32f4xx-hal/rt"]
+nucleo-f401re = ["stm32f4xx-hal/stm32f401"]
+nucleo-f411re = ["stm32f4xx-hal/stm32f411"]
+nucleo-f412rg = ["stm32f4xx-hal/stm32f412"]
+
+[package.metadata.docs.rs]
+features = ["nucleo-f412rg", "rt"]
+
+[profile.dev]
+debug = true
+incremental = false
+lto = true
+
+[profile.release]
+codegen-units = 1
+debug = true
+lto = true
