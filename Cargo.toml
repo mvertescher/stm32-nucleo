@@ -41,7 +41,13 @@ strum = "0.13.0"
 strum_macros = "0.13.0"
 
 [features]
-rt = ["stm32f0xx-hal/rt", "stm32f4xx-hal/rt", "stm32l4xx-hal/rt"]
+rt = [
+  "stm32f0xx-hal/rt",
+  "stm32f4xx-hal/rt",
+  "stm32f7xx-hal/rt",
+  "stm32l1xx-hal/rt",
+  "stm32l4xx-hal/rt",
+]
 # The commented features/boards below do not currently have HAL support.
 nucleo-f030r8   = ["stm32f0xx-hal/stm32f030"]
 # nucleo-f031k6   = ["stm32f0xx-hal/stm32f031"]
