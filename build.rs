@@ -32,6 +32,10 @@ enum Feature {
     NUCLEO_F401RE,
     NUCLEO_F411RE,
     NUCLEO_F412RG,
+    NUCLEO_L412KB,
+    NUCLEO_L432KC,
+    NUCLEO_L452RE,
+    NUCLEO_L476RG,
 }
 
 /// Determine which feature flag was enabled based on env variables set by Cargo
@@ -75,6 +79,34 @@ impl Feature {
                     ram: (0x20000000, "256K".to_string()),
                 };
                 (Form::Nucleo64, Family::Stm32F4xx, map)
+            }
+            Feature::NUCLEO_L412KB => {
+                let map = MemoryMap {
+                    flash: (0x08000000, "128K".to_string()),
+                    ram: (0x20000000, "40K".to_string()),
+                };
+                (Form::Nucleo32, Family::Stm32L4xx, map)
+            }
+            Feature::NUCLEO_L432KC => {
+                let map = MemoryMap {
+                    flash: (0x08000000, "256K".to_string()),
+                    ram: (0x20000000, "64K".to_string()),
+                };
+                (Form::Nucleo32, Family::Stm32L4xx, map)
+            }
+            Feature::NUCLEO_L452RE => {
+                let map = MemoryMap {
+                    flash: (0x08000000, "512K".to_string()),
+                    ram: (0x20000000, "160K".to_string()),
+                };
+                (Form::Nucleo64, Family::Stm32L4xx, map)
+            }
+            Feature::NUCLEO_L476RG => {
+                let map = MemoryMap {
+                    flash: (0x08000000, "1M".to_string()),
+                    ram: (0x20000000, "128K".to_string()),
+                };
+                (Form::Nucleo64, Family::Stm32L4xx, map)
             }
         }
     }

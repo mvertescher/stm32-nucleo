@@ -8,7 +8,26 @@ name = "stm32-nucleo"
 version = "0.1.0"
 
 [dependencies]
-stm32f4xx-hal = "0.2.8"
+
+[dependencies.stm32f0xx-hal]
+version = "0.10.1"
+optional = true
+
+[dependencies.stm32f4xx-hal]
+version = "0.2.8"
+optional = true
+
+[dependencies.stm32f7xx-hal]
+git = "https://github.com/mvertescher/stm32f7xx-hal.git"
+optional = true
+
+[dependencies.stm32l1xx-hal]
+version = "0.0.0"
+optional = true
+
+[dependencies.stm32l4xx-hal]
+version = "0.3.4"
+optional = true
 
 [dev-dependencies]
 cortex-m = "0.5.8"
@@ -22,10 +41,57 @@ strum = "0.13.0"
 strum_macros = "0.13.0"
 
 [features]
-rt = ["stm32f4xx-hal/rt"]
-nucleo-f401re = ["stm32f4xx-hal/stm32f401"]
-nucleo-f411re = ["stm32f4xx-hal/stm32f411"]
-nucleo-f412rg = ["stm32f4xx-hal/stm32f412"]
+rt = ["stm32f0xx-hal/rt", "stm32f4xx-hal/rt", "stm32l4xx-hal/rt"]
+# The commented features/boards below do not currently have HAL support.
+nucleo-f030r8   = ["stm32f0xx-hal/stm32f030"]
+# nucleo-f031k6   = ["stm32f0xx-hal/stm32f031"]
+nucleo-f042k6   = ["stm32f0xx-hal/stm32f042"]
+nucleo-f070rb   = ["stm32f0xx-hal/stm32f070xb"]
+# nucleo-f072rb   = ["stm32f0xx-hal/stm32f072"]
+# nucleo-f091rc   = ["stm32f0xx-hal/stm32f091"]
+# nucleo-f103rb   = ["stm32f0xx-hal/stm32f103"]
+# nucleo-f207zg   = ["stm32f0xx-hal/stm32f207"]
+# nucleo-f301k8   = ["stm32f0xx-hal/stm32f301"]
+# nucleo-f302r8   = ["stm32f0xx-hal/stm32f302"]
+# nucleo-f303k8   = ["stm32f0xx-hal/stm32f303"]
+# nucleo-f303re   = ["stm32f0xx-hal/stm32f303"]
+# nucleo-f303ze   = ["stm32f0xx-hal/stm32f303"]
+# nucleo-f334r8   = ["stm32f0xx-hal/stm32f334"]
+nucleo-f401re   = ["stm32f4xx-hal/stm32f401"]
+# nucleo-f410rb   = ["stm32f4xx-hal/stm32f410"]
+nucleo-f411re   = ["stm32f4xx-hal/stm32f411"]
+nucleo-f412rg   = ["stm32f4xx-hal/stm32f412"]
+nucleo-f412zg   = ["stm32f4xx-hal/stm32f412"]
+# nucleo-f413zh   = ["stm32f4xx-hal/stm32f413"]
+nucleo-f429zi   = ["stm32f4xx-hal/stm32f429"]
+# nucleo-f439zi   = ["stm32f4xx-hal/stm32f439"]
+# nucleo-f446re   = ["stm32f4xx-hal/stm32f446"]
+# nucleo-f446ze   = ["stm32f4xx-hal/stm32f446"]
+nucleo-f722ze   = ["stm32f7xx-hal/stm32f722"]
+nucleo-f746zg   = ["stm32f7xx-hal/stm32f746"]
+nucleo-f756zg   = ["stm32f7xx-hal/stm32f756"]
+nucleo-f767zi   = ["stm32f7xx-hal/stm32f767"]
+# nucleo-g070rb   = ["stm32g0xx-hal/stm32g070"]
+# nucleo-g071rb   = ["stm32g0xx-hal/stm32g071"]
+# nucleo-h743zi   = ["stm32h7xx-hal/stm32h743"]
+# nucleo-l010rb   = ["stm32l0xx-hal/stm32l010"]
+# nucleo-l011k4   = ["stm32l0xx-hal/stm32l011"]
+# nucleo-l031k6   = ["stm32l0xx-hal/stm32l031"]
+# nucleo-l053r8   = ["stm32l0xx-hal/stm32l053"]
+# nucleo-l073rz   = ["stm32l0xx-hal/stm32l073"]
+# nucleo-l152re   = ["stm32l0xx-hal/stm32l152"]
+nucleo-l412kb   = ["stm32l4xx-hal/stm32l4x2"]
+nucleo-l412rb-p = ["stm32l4xx-hal/stm32l4x2"]
+nucleo-l432kc   = ["stm32l4xx-hal/stm32l4x2"]
+nucleo-l433rc-p = ["stm32l4xx-hal/stm32l4x3"]
+nucleo-l452re   = ["stm32l4xx-hal/stm32l4x2"]
+nucleo-l452re-p = ["stm32l4xx-hal/stm32l4x2"]
+nucleo-l476rg   = ["stm32l4xx-hal/stm32l4x6"]
+nucleo-l496zg   = ["stm32l4xx-hal/stm32l4x6"]
+nucleo-l496zg-p = ["stm32l4xx-hal/stm32l4x6"]
+nucleo-l4a6zg   = ["stm32l4xx-hal/stm32l4x6"]
+nucleo-l4r5zi   = ["stm32l4xx-hal/stm32l4x5"]
+nucleo-l4r5zi-p = ["stm32l4xx-hal/stm32l4x5"]
 
 [package.metadata.docs.rs]
 features = ["nucleo-f412rg", "rt"]

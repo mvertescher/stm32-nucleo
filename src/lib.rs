@@ -4,8 +4,20 @@
 #![deny(warnings)]
 #![no_std]
 
+#[cfg(stm32f0xx)]
+pub extern crate stm32f0xx_hal as hal;
+
 #[cfg(stm32f4xx)]
 pub extern crate stm32f4xx_hal as hal;
+
+#[cfg(stm32f7xx)]
+pub extern crate stm32f7xx_hal as hal;
+
+#[cfg(stm32l1xx)]
+pub extern crate stm32l1xx_hal as hal;
+
+#[cfg(stm32l4xx)]
+pub extern crate stm32l4xx_hal as hal;
 
 #[cfg(stm32f4xx)]
 pub mod led;
