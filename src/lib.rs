@@ -22,6 +22,18 @@ pub extern crate stm32l4xx_hal as hal;
 #[cfg(stm32f4xx)]
 pub mod led;
 
+/// Create the default user LED.
+#[cfg(nucleo64)]
+#[macro_export]
+macro_rules! user_led {
+    ($p:ident) => {
+        {
+            let gpioa = $p.GPIOA.split();
+            stm32_nucleo::led::Led::new(gpioa)
+        }
+    }
+}
+
 /// Configure the default serial port with the default configuration.
 ///
 /// The baud rate of the serial port should be 19200.
