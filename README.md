@@ -5,6 +5,10 @@
 
 WIP: Board support crate for STM32 Nucleo devices.
 
+## Resources
+
+- [Landing Page](https://www.st.com/en/evaluation-tools/stm32-mcu-nucleo.html?querycriteria=productId=LN1847)
+
 ## License
 
 Licensed under either of
