@@ -10,6 +10,8 @@ WIP: Board support crate for STM32 Nucleo devices.
 - [Landing Page](https://www.st.com/en/evaluation-tools/stm32-mcu-nucleo.html?querycriteria=productId=LN1847)
 - [Nucleo32 User Manual](https://www.st.com/resource/en/user_manual/dm00231744.pdf)
 - [Nucleo64 User Manual](https://www.st.com/resource/en/user_manual/dm00105823.pdf)
+- [Nucleo128 User Manual](https://www.st.com/resource/en/user_manual/dm00244518.pdf)
+- [Nucleo128 User Manual (L4)](https://www.st.com/resource/en/user_manual/dm00368330.pdf)
 
 ## License
 
