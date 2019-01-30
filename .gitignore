@@ -6,3 +6,5 @@ Cargo.lock
 memory.x
 openocd.cfg
 openocd.gdb
+
+**/.gdb_history
