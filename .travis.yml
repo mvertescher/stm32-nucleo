@@ -12,6 +12,7 @@ matrix:
     - rust: nightly
   fast_finish: true
 script:
+  - rustup target add thumbv6m-none-eabi
   - rustup target add thumbv7em-none-eabihf
   - cargo build --features=$BOARD --verbose
   - cargo build --features=$BOARD --release --verbose
