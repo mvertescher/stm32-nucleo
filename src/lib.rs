@@ -19,8 +19,19 @@ pub extern crate stm32l1xx_hal as hal;
 #[cfg(stm32l4xx)]
 pub extern crate stm32l4xx_hal as hal;
 
-#[cfg(stm32f4xx)]
 pub mod led;
+
+/// Create the default user LED.
+#[cfg(nucleo32)]
+#[macro_export]
+macro_rules! user_led {
+    ($p:ident) => {
+        {
+            let gpiob = $p.GPIOB.split();
+            stm32_nucleo::led::Led::new(gpiob)
+        }
+    }
+}
 
 /// Create the default user LED.
 #[cfg(nucleo64)]

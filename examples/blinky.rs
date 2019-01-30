@@ -1,4 +1,4 @@
-//! Blinks the user LED for Nucleo-64 boards
+//! Blinks the user LED for Nucleo-32 and Nucleo-64 boards
 
 #![deny(unsafe_code)]
 #![deny(warnings)]
