@@ -4,6 +4,9 @@ rust:
   - nightly
 cache: cargo
 env:
+- BOARD=nucleo-f030r8
+- BOARD=nucleo-f042k6
+- BOARD=nucleo-f070rb
 - BOARD=nucleo-f401re
 - BOARD=nucleo-f411re
 - BOARD=nucleo-f412rg
